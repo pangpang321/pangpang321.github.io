@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>딥페이크 범죄 예방 및 대응 가이드 - 네티즌 감시단</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ul { list-style: none; }
+    a { text-decoration: none; color: inherit; }
+    body { font-family: "맑은 고딕", "돋움"; font-size: 100%; }
+    .clear { clear: both; }
+
+    [class*="c_"] { float: left; padding: 10px; }
+    [class*="c_"] { width: 100%; }
+    @media only screen and (min-width: 600px) {
+        .c_m_3 {width:25%;} .c_m_9 {width:75%;} .c_m_12 {width:100%;}
+    }
+    @media only screen and (min-width: 768px) {
+        .c_3 {width:25%;} .c_9 {width:75%;} .c_12 {width:100%;}
+    }
+
+    #page { max-width: 980px; margin: 0 auto; }
+
+    header #logo { float: left; margin: 15px 0 0 20px; }
+    header #top_menu { float: right; margin: 30px 20px 0 0; font-size: 12px; color: #666666; }
+    header #top_menu li { display: inline; }
+    .line { margin-top: 20px; border-top: solid 1px #cccccc; }
+    header nav ul { margin-top: 20px; text-align: center; }
+    header nav li { display: inline-block; margin: 0 30px; font-weight: bold; color: #333333; }
+
+    main { margin-top: 20px; min-height: 500px; }
+
+    footer { padding: 20px 0 20px 15px; border-top: solid 3px #06b5b8; color: #666666; margin-top: 40px; }
+    footer #address { float: left; }
+    footer #link { float: right; margin-right: 15px; }
+    footer #footer_menu li { display: inline; margin-right: 5px; }
+    footer #company_info { margin-top: 20px; }
+    footer #company_info li { margin-top: 2px; font-size: 12px; }
+    footer #copyright { margin-top: 10px; font-size: 11px; color: #888888; }
+    footer #link h3 { font-size: 16px; color: #06b5b8; text-align: right; }
+    footer #link select { margin: 5px 0 0 50px; width: 120px; height: 20px; font-size: 11px; }
+    footer #icons { margin-top: 5px; text-align: right; }
+       
+    #sub_menu { margin-top: 10px; }
+    #sub_menu .menu_title { font-size: 16px; font-weight: bold; color: #12b9b2; margin-bottom: 10px; padding-left: 5px; }
+    #sub_menu ul { border-top: 2px solid #333333; }
+    #sub_menu li { padding: 15px 10px; border-bottom: 1px dashed #cccccc; font-size: 14px; color: #444444; text-align: center; font-weight: bold; }
+    #sub_menu li:hover { background-color: #f5f5f5; color: #12b9b2; cursor: pointer; }
+
+    #content_area { padding-left: 30px; margin-top: 10px; }
+    #content_area h2 { font-size: 24px; color: #333333; border-bottom: 2px solid #00a8ab; padding-bottom: 15px; margin-bottom: 20px; }
+    #content_area .description { font-size: 14px; line-height: 1.6; color: #555555; margin-bottom: 30px; }
+       
+    .board_table {
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 2px solid #00a8ab;
+        text-align: center;
+    }
+    .board_table th {
+        padding: 12px 0;
+        border-bottom: 1px solid #ccc;
+        font-size: 14px;
+        color: #333;
+    }
+    .board_table td {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 13px;
+        color: #555;
+    }
+    
+    .board_table .td_title {
+        text-align: left;
+        padding-left: 20px;
+    }
+    .board_table .td_title a:hover {
+        color: #12b9b2;
+        text-decoration: underline;
+    }
+
+    .board_bottom {
+        margin-top: 20px;
+        position: relative;
+    }
+    .pagination {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .pagination a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 2px;
+        border: 1px solid #ccc;
+        color: #666;
+        font-size: 13px;
+    }
+    .pagination a.active {
+        background-color: #00a8ab;
+        color: #fff;
+        border: 1px solid #00a8ab;
+    }
+</style>
+</head>
+<body>
+<div id="page">
+    <header>
+        <a href="index.html">
+            <img id="logo" src="img/logo.png" width="180" height="40" alt="로고">
+        </a>
+        <ul id="top_menu">
+            <li>로그인 | </li><li>회원 가입 | </li><li>사이트맵 | </li><li>기관 소개</li>
+        </ul>
+        <div class="clear"></div>
+        <div class="line"></div>
+        <nav>
+            <ul>
+                <li><a href="edu.html">배움 공간</a></li>
+                <li><a href="test.html">자가진단실</a></li>
+                <li><a href="report.html">신고안내소</a></li>
+                <li><a href="community.html">네티즌 감시단</a></li>
+                <li><a href="news.html">새 소식 공유</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <aside id="sub_menu" class="c_m_12 c_3">
+            <div class="menu_title">[커뮤니티 메뉴]</div>
+            <ul>
+                <li>의심 사례 공유</li>
+                <li>유해 콘텐츠 모니터링</li>
+                <li>자유 토론</li>
+                <li>공지사항</li>
+            </ul>
+        </aside>
+
+        <section id="content_area" class="c_m_12 c_9">
+            <h2>네티즌 감시단 커뮤니티</h2>
+            
+            <div class="description">
+                <p>일상 속 의심 사례를 공유하고, <strong>집단지성을 통해 유해 콘텐츠를 모니터링</strong>하는 자유 토론 게시판입니다.</p>
+                <p>의심스러운 SNS 계정이나 합성으로 추정되는 게시물이 있다면 이곳에 공유해 주세요.</p>
+            </div>
+
+            <table class="board_table">
+                <colgroup>
+                    <col width="8%">
+                    <col width="*">
+                    <col width="15%">
+                    <col width="15%">
+                    <col width="8%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>공지</td>
+                        <td class="td_title"><a href="#">[필독] 커뮤니티 이용 규칙 및 제재 안내</a></td>
+                        <td>관리자</td>
+                        <td>2026-05-20</td>
+                        <td>942</td>
+                    </tr>
+                    <tr>
+                        <td>공지</td>
+                        <td class="td_title"><a href="#">딥페이크 피해자 지원 센터 연계 안내</a></td>
+                        <td>관리자</td>
+                        <td>2026-05-18</td>
+                        <td>815</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td class="td_title"><a href="#">어제 트위터에서 이상한 계정 발견했습니다 (링크첨부)</a></td>
+                        <td>박민석</td>
+                        <td>10:42</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td class="td_title"><a href="#">이 영상 혹시 AI 합성인지 확인 가능하신 분 있나요?</a></td>
+                        <td>무당이</td>
+                        <td>09:15</td>
+                        <td>112</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td class="td_title"><a href="#">방통위에 유해사이트 신고 완료했습니다. 후기 남겨요.</a></td>
+                        <td>바람개비</td>
+                        <td>2026-05-21</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td class="td_title"><a href="#">내 사진이 도용된 것 같은데 초기 대응 어떻게 하죠?</a></td>
+                        <td>총장님사랑해요</td>
+                        <td>2026-05-21</td>
+                        <td>188</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="td_title"><a href="#">최근 유행하는 신종 텔레그램 수법 조심하세요</a></td>
+                        <td>웹프공부러</td>
+                        <td>2026-05-21</td>
+                        <td>405</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="board_bottom">
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                </div>
+            </div>
+            
+        </section>
+        
+        <div class="clear"></div>
+    </main>
+    
+    <footer>
+        <article id="address">
+            <ul id="footer_menu">
+                <li>개인정보 처리방침 | 서비스 이용약관 | </li>
+                <li>커뮤니티 이용규칙 | 권리침해 신고센터</li>
+            </ul>
+            <ul id="company_info">
+                <li>딥페이크 범죄 예방과 대응 가이드 플랫폼</li>
+                <li>운영 책임자 : 박민석 (컴퓨터공학과 202439742)</li>
+                <li>이메일 | 비즈니스 문의 : pangpang321@gachon.ac.kr </li>
+                <li id="copyright">Copyright by Minseok Park All Rights Reserved.</li>
+            </ul>
+        </article>
+        
+        <article id="link">
+            <h3>관련 기관 안내</h3>
+            <select>
+                <option>경찰청 사이버수사국</option><option>여성가족부</option><option>방송통신심의위원회</option>
+            </select>
+            <div id="icons">
+                <img src="img/face.png" alt="Facebook" width="16" height="16">
+                <img src="img/naver.jpg" alt="Blog" width="16" height="16">
+                <img src="img/X.jpg" alt="Twitter" width="16" height="16">
+            </div>
+        </article>
+        <div class="clear"></div>
+    </footer>
+</div>
+</body>
+</html>

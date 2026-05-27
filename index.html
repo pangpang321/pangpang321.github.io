@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>딥페이크 범죄 예방 및 대응 가이드</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    body {
+        font-family: "맑은 고딕", "돋움";
+        font-size: 100%;
+    }
+    .clear {
+        clear: both;
+    }
+
+    [class*="c_"] { float: left; padding: 10px; }
+    [class*="c_"] { width: 100%; }
+    
+    @media only screen and (min-width: 600px) {
+        .c_m_1 {width:8.33%;} .c_m_2 {width:16.66%;} .c_m_3 {width:25%;}
+        .c_m_4 {width:33.33%;} .c_m_5 {width:41.66%;} .c_m_6 {width:50%;}
+        .c_m_7 {width:58.33%;} .c_m_8 {width:66.66%;} .c_m_9 {width:75%;}
+        .c_m_10 {width:83.33%;} .c_m_11 {width:91.66%;} .c_m_12 {width:100%;}
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .c_1 {width:8.33%;} .c_2 {width:16.66%;} .c_3 {width:25%;}
+        .c_4 {width:33.33%;} .c_5 {width:41.66%;} .c_6 {width:50%;}
+        .c_7 {width:58.33%;} .c_8 {width:66.66%;} .c_9 {width:75%;}
+        .c_10 {width:83.33%;} .c_11 {width:91.66%;} .c_12 {width:100%;}
+        
+        .info_box.c_4 { width: 30%; }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .divider { display: none; }
+    }
+
+    #page {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    header #logo {
+        float: left;
+        margin: 15px 0 0 20px;
+    }
+    header #top_menu {
+        float: right;
+        margin: 30px 20px 0 0;
+        font-size: 12px;
+        color: #666666;
+    }
+    header #top_menu li {
+        display: inline;
+    }
+    .line {
+        margin-top: 20px;
+        border-top: solid 1px #cccccc;
+    }
+    header nav ul {
+        margin-top: 20px;
+        text-align: center;
+    }
+    header nav li {
+        display: inline-block;
+        margin: 0 30px;
+        font-weight: bold;
+        color: #333333;
+    }
+
+    main {
+        margin-top: 10px;
+    }
+    
+    #banner {
+        height: 150px;
+        background-color: #00a8ab;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 45px;
+    }
+    
+    .info_box {
+        margin-top: 20px;
+    }
+    .info_box .title {
+        float: left;
+        margin-left: 10px;
+        font-weight: bold;
+        color: #12b9b2;
+    }
+    .info_box .more {
+        float: right;
+        margin-right: 10px;
+        font-size: 12px;
+        color: #888888;
+    }
+    .info_box ul {
+        margin-top: 35px;
+        color: #666666;
+    }
+    .info_box li {
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .info_box .subject {
+        float: left;
+        margin-left: 10px;
+        width: 65%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .info_box .date {
+        float: right;
+        margin-right: 5px;
+        color: #999;
+    }
+    
+    .info_box .phone {
+        margin-top: 40px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ff3333;
+    }
+    .info_box .desc {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 12px;
+        color: #666666;
+    }
+
+    .divider {
+        float: left;
+        width: 3px;
+        height: 160px;
+        margin-top: 30px;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+    }
+
+    #sitemap {
+        padding: 20px 0 0 15px;
+    }
+    #sitemap h3 {
+        font-size: 15px;
+        color: #12b9b2;
+        margin-left: 16px;
+    }
+    #sitemap ul {
+        color: #666666;
+    }
+    #sitemap li {
+        list-style-type: none;
+        background-image: url("img/blue_dot.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 4px 4px;
+        padding-left: 10px;
+        margin: 5px 0 0 20px;
+        font-size: 11px;
+    }
+
+    footer {
+        padding: 20px 0 20px 15px;
+        border-top: solid 3px #06b5b8;
+        color: #666666;
+    }
+    footer #address {
+        float: left;
+    }
+    footer #link {
+        float: right;
+        margin-right: 15px;
+    }
+    footer #footer_menu li {
+        display: inline;
+        margin-right: 5px;
+    }
+    footer #company_info {
+        margin-top: 20px;
+    }
+    footer #company_info li {
+        margin-top: 2px;
+        font-size: 12px;
+    }
+    footer #copyright {
+        margin-top: 10px;
+        font-size: 11px;
+        color: #888888;
+    }
+    footer #link h3 {
+        font-size: 16px;
+        color: #06b5b8;
+        text-align: right;
+    }
+    footer #link select {
+        margin: 5px 0 0 50px;
+        width: 120px;
+        height: 20px;
+        font-size: 11px;
+    }
+    footer #icons {
+        margin-top: 5px;
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+<div id="page">
+    <header>
+        <a href="index.html">
+            <img id="logo" src="img/logo.png" width="180" height="40" alt="로고">
+        </a>
+        <ul id="top_menu">
+            <li>로그인 | </li>
+            <li>회원 가입 | </li>
+            <li>사이트맵 | </li>
+            <li>기관 소개</li>
+        </ul>
+        <div class="clear"></div>
+        <div class="line"></div>
+        <nav>
+            <ul>
+                <li><a href="edu.html">배움 공간</a></li>
+                <li><a href="test.html">자가진단실</a></li>
+                <li><a href="report.html">신고안내소</a></li>
+                <li><a href="community.html">네티즌 감시단</a></li>
+                <li><a href="news.html">새 소식 공유</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="banner">
+            <h2>딥페이크 악용 범죄, 올바른 지식으로 예방합니다</h2>
+            <p>유해 콘텐츠를 감시하는 건전한 디지털 생태계 조성</p>
+        </section>
+        
+        <article class="info_box c_m_12 c_4">
+            <div class="title">피해 신고 전화</div>
+            <div class="more">자세히보기</div>
+            <div class="clear"></div>
+            <div class="phone">112 또는 1366</div>
+            <div class="desc">디지털성범죄 지원센터 : 02-735-8994</div>
+        </article>
+        
+        <img src="img/banner_bar.png" class="divider">
+        
+        <article class="info_box c_m_6 c_4">
+            <div class="title">관련 법률 공지사항</div>
+            <div class="more">더보기</div>
+            <div class="clear"></div>
+            <ul>
+                <li>
+                    <div class="subject">딥페이크 성착취물 처벌 규정 개정</div>
+                    <div class="date">2026-05-25</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="subject">디지털 성범죄 피해자 지원제도 안내</div>
+                    <div class="date">2026-05-18</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="subject">불법 촬영물 유포 시 법적 대응 절차</div>
+                    <div class="date">2026-05-10</div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </article>
+        
+        <img src="img/banner_bar.png" class="divider">
+        
+        <article class="info_box c_m_6 c_4">
+            <div class="title">의심 사례 공유 (커뮤니티)</div>
+            <div class="more">더보기</div>
+            <div class="clear"></div>
+            <ul>
+                <li>
+                    <div class="subject">SNS에서 접근하는 신종 수법 공유</div>
+                    <div class="date">14:20</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="subject">이 영상 AI 합성된 것 같은데 확인점요</div>
+                    <div class="date">11:05</div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="subject">어제 네티즌 감시단으로 신고한 건 후기</div>
+                    <div class="date">09:30</div>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </article>
+        
+        <div class="clear"></div>
+        <div class="line"></div>
+        
+        <section id="sitemap">
+            <div class="c_m_6 c_3">
+                <h3>딥페이크의 이해</h3>
+                <ul>
+                    <li>딥페이크 개념 정리</li>
+                    <li>제작 원리와 위험성</li>
+                    <li>최근 악용 사례 분석</li>
+                </ul>
+            </div>
+            <div class="c_m_6 c_3">
+                <h3>피해 예방과 진단</h3>
+                <ul>
+                    <li>피해 징후 자가진단</li>
+                    <li>개인정보 보호 수칙</li>
+                    <li>SNS 사진 보안 설정</li>
+                </ul>
+            </div>
+            <div class="c_m_6 c_3">
+                <h3>피해 대처 및 신고</h3>
+                <ul>
+                    <li>발생 즉시 대처 요령</li>
+                    <li>기관별 신고 접수처</li>
+                    <li>무료 법률 자문 안내</li>
+                </ul>
+            </div>
+            <div class="c_m_6 c_3">
+                <h3>소통과 감시</h3>
+                <ul>
+                    <li>자유 토론 및 질문</li>
+                    <li>유해 사이트 모니터링</li>
+                    <li>익명 공익 제보란</li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <article id="address">
+            <ul id="footer_menu">
+                <li>개인정보 처리방침 | 서비스 이용약관 | </li>
+                <li>커뮤니티 이용규칙 | 권리침해 신고센터</li>
+            </ul>
+            <ul id="company_info">
+                <li>딥페이크 범죄 예방과 대응 가이드 플랫폼</li>
+                <li>운영 책임자 : 박민석</li>
+                <li>이메일 | 비즈니스 문의 : pangpang321@gachon.ac.kr </li>
+                <li>본 사이트의 콘텐츠는 저작권법의 보호를 받으므로 무단 전재 및 배포를 금합니다.</li>
+                <li id="copyright">Copyright by Minseok Park All Rights Reserved.</li>
+            </ul>
+        </article>
+        
+        <article id="link">
+            <h3>관련 기관 안내</h3>
+            <select>
+                <option>경찰청 사이버수사국</option>
+                <option>여성가족부</option>
+                <option>방송통신심의위원회</option>
+            </select>
+            <div id="icons">
+                <img src="img/face.png" alt="Facebook" width="16" height="16">
+                <img src="img/naver.jpg" alt="Blog" width="16" height="16">
+                <img src="img/X.jpg" alt="Twitter" width="16" height="16">
+            </div>
+        </article>
+        <div class="clear"></div>
+    </footer>
+</div>
+</body>
+</html>
